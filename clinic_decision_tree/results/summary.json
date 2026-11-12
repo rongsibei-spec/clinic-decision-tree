@@ -1,0 +1,76 @@
+{
+  "data": {
+    "rows": 400,
+    "columns": 8,
+    "no_shows": 91,
+    "train": 280,
+    "test": 120,
+    "train_no_shows": 64,
+    "test_no_shows": 27,
+    "seed": 42
+  },
+  "model": {
+    "features": [
+      "lead_time_days",
+      "prior_no_shows",
+      "age",
+      "distance_miles",
+      "sms_reminder",
+      "new_patient",
+      "appointment_hour"
+    ],
+    "depth": 3,
+    "min_leaf": 10,
+    "training_accuracy": 0.8392857142857143
+  },
+  "baseline": {
+    "TN": 93,
+    "FP": 0,
+    "FN": 27,
+    "TP": 0,
+    "accuracy": 0.775,
+    "no_show_precision": 0.0,
+    "no_show_recall": 0.0,
+    "total_value": -3240,
+    "value_per_appointment": -27.0
+  },
+  "v1": {
+    "TN": 86,
+    "FP": 7,
+    "FN": 7,
+    "TP": 20,
+    "accuracy": 0.8833333333333333,
+    "no_show_precision": 0.7407407407407407,
+    "no_show_recall": 0.7407407407407407,
+    "total_value": -1260,
+    "value_per_appointment": -10.5
+  },
+  "examples": {
+    "D": {
+      "action": "overbook",
+      "leaf": 4,
+      "path": [
+        "prior_no_shows <= 2.5",
+        "sms_reminder <= 0.5",
+        "prior_no_shows > 0.5"
+      ],
+      "no_show_probability": 0.5576923076923077,
+      "leaf_training_count": 52
+    },
+    "E": {
+      "action": "hold",
+      "leaf": 7,
+      "path": [
+        "prior_no_shows <= 2.5",
+        "sms_reminder > 0.5",
+        "age > 18.5"
+      ],
+      "no_show_probability": 0.03546099290780142,
+      "leaf_training_count": 141
+    }
+  },
+  "improvement_total": 1980,
+  "improvement_per_appointment": 16.5,
+  "assumed_annual_volume": 4000,
+  "projected_annual_improvement": 66000.0
+}

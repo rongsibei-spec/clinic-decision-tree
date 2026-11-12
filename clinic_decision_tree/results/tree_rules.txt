@@ -1,0 +1,13 @@
+|--- prior_no_shows <= 2.50
+|   |--- sms_reminder <= 0.50
+|   |   |--- prior_no_shows <= 0.50
+|   |   |   |--- class: 0
+|   |   |--- prior_no_shows >  0.50
+|   |   |   |--- class: 1
+|   |--- sms_reminder >  0.50
+|   |   |--- age <= 18.50
+|   |   |   |--- class: 0
+|   |   |--- age >  18.50
+|   |   |   |--- class: 0
+|--- prior_no_shows >  2.50
+|   |--- class: 1
